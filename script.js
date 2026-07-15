@@ -21,14 +21,14 @@ async function searchCard() {
             result.innerHTML = `
                 <h2>Certification #${card.cert}</h2>
 
-                <img src="${card.image}" width="250">
+                <img src="${card.image}" width="250" alt="${card.player}">
 
                 <h3>${card.player}</h3>
 
-                <p><b>Year:</b> ${card.year}</p>
-                <p><b>Brand:</b> ${card.brand}</p>
-                <p><b>Set:</b> ${card.set}</p>
-                <p><b>Card #:</b> ${card.number}</p>
+                <p><strong>Year:</strong> ${card.year}</p>
+                <p><strong>Brand:</strong> ${card.brand}</p>
+                <p><strong>Set:</strong> ${card.set}</p>
+                <p><strong>Card #:</strong> ${card.number}</p>
 
                 <h2>${card.grade}</h2>
 
@@ -49,7 +49,6 @@ async function searchCard() {
         console.error(error);
 
     }
-
 }
 
 function calculatePrice() {
@@ -60,26 +59,22 @@ function calculatePrice() {
         cards = 1;
     }
 
-    let pricePerCard = cards >= 3 ? 13 : 15;
-    let total = cards * pricePerCard;
+    let pricePerCard = 15;
 
-    document.getElementById("totalPrice").innerHTML =
-        "Total Price: $" + total;
+    if (cards >= 3) {
+        pricePerCard = 13;
+    }
+
+    let total = cards * pricePerCard;
+    let savings = 0;
+
+    if (cards >= 3) {
+        savings = cards * 2;
+    }
+
+    document.getElementById("totalPrice").innerHTML = `
+        <h2>Total: $${total}</h2>
+        <p>Price per card: $${pricePerCard}</p>
+        ${savings > 0 ? `<p style="color:green;"><strong>You saved $${savings}!</strong></p>` : ""}
+    `;
 }
-Your cards.json should look like this:
-[
-  {
-    "cert": "001",
-    "player": "Ozzie Guillen",
-    "year": "1989",
-    "brand": "Donruss",
-    "set": "MVP",
-    "number": "BC-23",
-    "grade": "EX5",
-    "notes": [
-      "Red stain on back",
-      "2 factory print dots"
-    ],
-    "image": "images/001.jpg"
-  }
-]
