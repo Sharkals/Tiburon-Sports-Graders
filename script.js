@@ -1,1 +1,55 @@
+async function searchCard() {
 
+    const cert = document.getElementById("cert").value.trim();
+
+    const result = document.getElementById("result");
+
+    try {
+
+        const response = await fetch("cards.json");
+        const cards = await response.json();
+
+        const card = cards.find(c => c.cert === cert);
+
+        if (card) {
+
+            let notes = "";
+
+            for (let note of card.notes) {
+                notes += `<li>${note}</li>`;
+            }
+
+            result.innerHTML = `
+                <h2>Certification #${card.cert}</h2>
+
+                <img src="${card.image}" width="250">
+
+                <h3>${card.player}</h3>
+
+                <p><b>Year:</b> ${card.year}</p>
+                <p><b>Brand:</b> ${card.brand}</p>
+                <p><b>Set:</b> ${card.set}</p>
+                <p><b>Card #:</b> ${card.number}</p>
+
+                <h2>${card.grade}</h2>
+
+                <h3>Notes</h3>
+
+                <ul>${notes}</ul>
+            `;
+
+        } else {
+
+            result.innerHTML = "<h2>Certification Not Found</h2>";
+
+        }
+
+    } catch (error) {
+
+        result.innerHTML = "<h2>Error loading card database.</h2>";
+
+        console.error(error);
+
+    }
+
+}
