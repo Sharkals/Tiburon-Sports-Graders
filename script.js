@@ -53,3 +53,19 @@ async function searchCard() {
     }
 
 }
+[
+  {
+    "cert": "001",
+    "player": "Ozzie Guillen",
+    "year": "1989",
+    "brand": "Donruss",
+    "set": "MVP",
+    "number": "BC-23",
+    "grade": "EX5",
+    "notes": [
+      "Red stain on back",
+      "2 factory print dots"
+    ],
+    "image": "images/001.jpg"
+  }
+]
