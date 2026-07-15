@@ -288,3 +288,53 @@ tr:nth-child(even){
     padding:20px;
     box-shadow:0 4px 12px rgba(0,0,0,.15);
 }
+
+function searchCard(){
+
+let cert=document.getElementById("cert").value;
+
+let result=document.getElementById("result");
+
+if(cert=="001"){
+
+result.innerHTML=`
+
+<h2>Certification #001</h2>
+
+<img src="images/ozzie.jpg" width="250">
+
+<h3>Ozzie Guillen</h3>
+
+<p><b>Year:</b> 1989</p>
+
+<p><b>Brand:</b> Donruss</p>
+
+<p><b>Set:</b> MVP</p>
+
+<p><b>Card #:</b> BC-23</p>
+
+<p><b>Final Grade:</b> EX5</p>
+
+<p><b>Grader:</b> TSG</p>
+
+<p><b>Notes</b></p>
+
+<ul>
+
+<li>Red stain on back</li>
+
+<li>2 factory print dots</li>
+
+</ul>
+
+`;
+
+}
+
+else{
+
+result.innerHTML="<h2>Certification Not Found</h2>";
+
+}
+
+}
