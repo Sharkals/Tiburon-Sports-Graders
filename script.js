@@ -69,3 +69,22 @@ async function searchCard() {
     "image": "images/001.jpg"
   }
 ]
+function calculatePrice() {
+
+    let cards = parseInt(document.getElementById("cardCount").value);
+
+    if (isNaN(cards) || cards < 1) {
+        cards = 1;
+    }
+
+    let pricePerCard = 15;
+
+    if (cards >= 3) {
+        pricePerCard = 13;
+    }
+
+    let total = cards * pricePerCard;
+
+    document.getElementById("totalPrice").innerHTML =
+        `Total Price: <strong>$${total}</strong>`;
+}
