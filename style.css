@@ -271,7 +271,8 @@ td{
 }
 
 tr:nth-child(even){
-    background:#f5f5f5;
+    background:#1a4d8f;
+    color:white;
 }
 
 .grades{
