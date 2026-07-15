@@ -282,8 +282,8 @@ tr:nth-child(even){
 }
 
 .box{
-    background:#e0e0e0;
-    color:#111;
+    background:#404040;
+    color:#fff;
     border-radius:12px;
     padding:20px;
     box-shadow:0 4px 12px rgba(0,0,0,.15);
