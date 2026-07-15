@@ -282,7 +282,7 @@ tr:nth-child(even){
 }
 
 .box{
-    background:#404040;
+    background:#1a4d8f;
     color:#fff;
     border-radius:12px;
     padding:20px;
@@ -338,3 +338,4 @@ result.innerHTML="<h2>Certification Not Found</h2>";
 }
 
 }
+
