@@ -88,3 +88,16 @@ function calculatePrice() {
     document.getElementById("totalPrice").innerHTML =
         `Total Price: <strong>$${total}</strong>`;
 }
+function calculatePrice() {
+    let cards = parseInt(document.getElementById("cardCount").value);
+
+    if (isNaN(cards) || cards < 1) {
+        cards = 1;
+    }
+
+    let pricePerCard = cards >= 3 ? 13 : 15;
+    let total = cards * pricePerCard;
+
+    document.getElementById("totalPrice").innerHTML =
+        "Total Price: $" + total;
+}
