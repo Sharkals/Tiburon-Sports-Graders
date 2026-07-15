@@ -1,7 +1,6 @@
 async function searchCard() {
 
     const cert = document.getElementById("cert").value.trim();
-
     const result = document.getElementById("result");
 
     try {
@@ -47,12 +46,27 @@ async function searchCard() {
     } catch (error) {
 
         result.innerHTML = "<h2>Error loading card database.</h2>";
-
         console.error(error);
 
     }
 
 }
+
+function calculatePrice() {
+
+    let cards = parseInt(document.getElementById("cardCount").value);
+
+    if (isNaN(cards) || cards < 1) {
+        cards = 1;
+    }
+
+    let pricePerCard = cards >= 3 ? 13 : 15;
+    let total = cards * pricePerCard;
+
+    document.getElementById("totalPrice").innerHTML =
+        "Total Price: $" + total;
+}
+Your cards.json should look like this:
 [
   {
     "cert": "001",
@@ -69,35 +83,3 @@ async function searchCard() {
     "image": "images/001.jpg"
   }
 ]
-function calculatePrice() {
-
-    let cards = parseInt(document.getElementById("cardCount").value);
-
-    if (isNaN(cards) || cards < 1) {
-        cards = 1;
-    }
-
-    let pricePerCard = 15;
-
-    if (cards >= 3) {
-        pricePerCard = 13;
-    }
-
-    let total = cards * pricePerCard;
-
-    document.getElementById("totalPrice").innerHTML =
-        `Total Price: <strong>$${total}</strong>`;
-}
-function calculatePrice() {
-    let cards = parseInt(document.getElementById("cardCount").value);
-
-    if (isNaN(cards) || cards < 1) {
-        cards = 1;
-    }
-
-    let pricePerCard = cards >= 3 ? 13 : 15;
-    let total = cards * pricePerCard;
-
-    document.getElementById("totalPrice").innerHTML =
-        "Total Price: $" + total;
-}
