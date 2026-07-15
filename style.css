@@ -283,11 +283,15 @@ tr:nth-child(even){
 }
 
 .box{
-    background:#1a4d8f;
+    background:#404040;
     color:#fff;
     border-radius:12px;
     padding:20px;
     box-shadow:0 4px 12px rgba(0,0,0,.15);
+}
+
+.box:nth-child(even){
+    background:#1a4d8f;
 }
 
 function searchCard(){
