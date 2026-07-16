@@ -292,4 +292,65 @@ placeholder="Enter Certification Number">
 
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TSG Pricing</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<nav>
+    <h1>TSG</h1>
+
+    <ul>
+        <li><a href="index">Home</a></li>
+        <li><a href="grading">Grading Scale</a></li>
+        <li><a href="lookup">Certification Lookup</a></li>
+        <li><a href="pricing">Pricing</a></li>
+    </ul>
+</nav>
+
+<div class="container">
+
+    <h1>Pricing</h1>
+
+    <h2>$15 Per Card</h2>
+
+    <p>
+        Submit <strong>3 or more cards</strong> and receive
+        <strong>$2 OFF every card</strong>.
+    </p>
+
+    <hr>
+
+    <h2>Pricing Calculator</h2>
+
+    <label>How many cards are you submitting?</label>
+
+    <br><br>
+
+    <input
+        type="number"
+        id="cardCount"
+        min="1"
+        value="1">
+
+    <br><br>
+
+    <button onclick="calculatePrice()">
+        Calculate
+    </button>
+
+    <h2 id="totalPrice">$15</h2>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
 
